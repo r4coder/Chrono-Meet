@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MeetEase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📅 MeetEase</h1>
+    <div id="liveClock" class="live-clock"></div>
+    <p style="text-align:center; color:#666; font-size: 1rem; margin-top: -15px;">
+      Plan smarter, meet better.
+    </p>
+
+    <div class="input-section">
+      <input type="time" id="startTime" />
+      <select id="startPeriod">
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+
+      <input type="time" id="endTime" />
+      <select id="endPeriod">
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+
+      <button onclick="addMeeting()">➕ Add Meeting</button>
+      <button onclick="scheduleMeetings()">✅ Auto Schedule</button>
+      <button onclick="resetMeetings()">🔄 Reset</button>
+      <button onclick="startNotification()">🔔 Notify Me</button>
+      <button onclick="testSound()">🔊 Test Sound</button>
+    </div>
+
+    <div id="meetings-list">
+      <h2>All Meetings</h2>
+      <div id="meetingCards" class="card-container"></div>
+    </div>
+
+    <div id="result">
+      <h2>🟢 Selected Meetings (Non-overlapping)</h2>
+      <div id="scheduledMeetings" class="card-container"></div>
+    </div>
+  </div>
+
+  <!-- MP3 Notification Sound -->
+  <audio id="notificationSound" preload="auto">
+    <source src="C:\Users\User\Downloads\siren-alert-96052.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
