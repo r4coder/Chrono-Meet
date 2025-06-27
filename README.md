@@ -1,4 +1,4 @@
-# ⏰ ChronoMeet – Smart Real-Time Meeting Scheduler
+# ⏰ MeetEase – Smart Real-Time Meeting Scheduler
 
 ChronoMeet is a sleek and intuitive meeting scheduling tool that helps you **plan optimal non-overlapping meetings**, get **real-time notifications**, and stay ahead with **sound alerts 1 minute before every meeting**.
 
