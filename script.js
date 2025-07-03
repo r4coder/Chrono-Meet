@@ -140,7 +140,7 @@ function notifyUser(meeting, message) {
     sound.pause();
     sound.currentTime = 0;
     sound.play().catch(() => {
-      alert("❌ Sound blocked by browser. Try clicking button again.");
+      alert("❌ Sound blocked by browser. Try clicking the button again.");
     });
   }
 }
