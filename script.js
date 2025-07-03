@@ -154,6 +154,12 @@ function testSound() {
     .catch(() => alert("❌ Sound blocked by browser. Try again after clicking."));
 }
 
+function stopSound() {
+  const sound = document.getElementById("notificationSound");
+  sound.pause();
+  sound.currentTime = 0;
+}
+
 function updateClock() {
   const now = new Date();
   let hour = now.getHours();
