@@ -6,7 +6,7 @@
   <title>MeetEase</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body onclick="enableSoundOnce()">
   <div class="container">
     <h1>📅 MeetEase</h1>
     <div id="liveClock" class="live-clock"></div>
@@ -34,6 +34,10 @@
       <button onclick="testSound()">🔊 Test Sound</button>
     </div>
 
+    <p style="text-align:center; color:#999;">
+      ⚠️ If sound is blocked, click anywhere on the page first, then try again.
+    </p>
+
     <div id="meetings-list">
       <h2>All Meetings</h2>
       <div id="meetingCards" class="card-container"></div>
@@ -45,7 +49,6 @@
     </div>
   </div>
 
-  <!-- MP3 Notification Sound -->
   <audio id="notificationSound" preload="auto">
     <source src="siren-alert-96052.mp3" type="audio/mpeg">
   </audio>
