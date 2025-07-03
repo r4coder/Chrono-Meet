@@ -1,7 +1,6 @@
 let meetings = [];
 let notifiedMeetingsBefore = new Set();
 let notificationInterval;
-let soundEnabled = false;
 
 function to24HourFloat(timeStr, period) {
   const [hour, minute] = timeStr.split(":").map(Number);
@@ -137,36 +136,22 @@ function notifyUser(meeting, message) {
   });
 
   const sound = document.getElementById("notificationSound");
-  if (soundEnabled) {
+  if (sound) {
     sound.pause();
     sound.currentTime = 0;
-    sound.play().catch(() => {});
+    sound.play().catch(() => {
+      alert("❌ Sound blocked by browser. Try clicking button again.");
+    });
   }
 }
 
 function testSound() {
   const sound = document.getElementById("notificationSound");
-  if (!soundEnabled) {
-    alert("⚠️ Please click anywhere on the page first to enable sound.");
-    return;
-  }
-
   sound.pause();
   sound.currentTime = 0;
   sound.play()
     .then(() => alert("✅ Sound is working!"))
-    .catch(err => {
-      console.error("Error playing sound:", err);
-      alert("❌ Still blocked. Try clicking the page once.");
-    });
-}
-
-function enableSoundOnce() {
-  if (!soundEnabled) {
-    const sound = document.getElementById("notificationSound");
-    sound.play().catch(() => {});
-    soundEnabled = true;
-  }
+    .catch(() => alert("❌ Sound blocked by browser. Try again after clicking."));
 }
 
 function updateClock() {
